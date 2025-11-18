@@ -1,0 +1,112 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --radius-base: 16px;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-poppins);
+}
+
+/* Allow manual dark mode via class on html */
+.dark {
+  --background: #0a0a0a;
+  --foreground: #ededed;
+}
+
+body {
+  background: radial-gradient(circle at 30% 20%, hsl(220 30% 96%) 0%, hsl(220 25% 92%) 35%, hsl(220 20% 88%) 60%, var(--background) 100%);
+  color: var(--foreground);
+  font-family: var(--font-inter), system-ui, -apple-system, Segoe UI, Roboto, Arial, Helvetica, sans-serif;
+}
+.dark body {
+  background: radial-gradient(circle at 30% 20%, hsl(220 20% 12%) 0%, hsl(220 15% 10%) 40%, hsl(220 15% 8%) 70%, var(--background) 100%);
+}
+
+/* Utility surface styles */
+.glass {
+  background: linear-gradient(
+      135deg,
+      color-mix(in oklab, var(--background) 78%, transparent) 0%,
+      color-mix(in oklab, var(--background) 65%, transparent) 100%
+    );
+  backdrop-filter: blur(14px) saturate(140%);
+  border: 1px solid color-mix(in oklab, var(--foreground) 18%, transparent);
+}
+
+.container-max {
+  @apply mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl;
+}
+
+/* Elevation helpers */
+.shadow-soft { box-shadow: 0 4px 24px -4px rgba(0,0,0,0.12); }
+.shadow-hover { transition: box-shadow .25s, transform .25s; }
+.shadow-hover:hover { box-shadow: 0 6px 32px -6px rgba(0,0,0,0.28); transform: translateY(-2px); }
+
+/* Heading font utility */
+.heading { font-family: var(--font-poppins), system-ui; }
+
+/* Premium subtle grain and gradient blobs */
+.app-noise-overlay {
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(rgba(0,0,0,0.025) 1px, transparent 1px);
+  background-size: 3px 3px;
+  mix-blend-mode: overlay;
+  opacity: .5;
+}
+.dark .app-noise-overlay {
+  background-image:
+    radial-gradient(rgba(255,255,255,0.02) 1px, transparent 1px);
+  opacity: .25;
+}
+
+.app-bg-blobs::before,
+.app-bg-blobs::after {
+  content: "";
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(80px) saturate(120%);
+  opacity: .18;
+}
+.app-bg-blobs::before {
+  width: 720px; height: 720px;
+  top: -180px; left: -120px;
+  background: radial-gradient(circle at 30% 30%, rgba(99,102,241,.8), rgba(59,130,246,.6) 40%, transparent 70%);
+}
+.app-bg-blobs::after {
+  width: 640px; height: 640px;
+  right: -140px; bottom: -140px;
+  background: radial-gradient(circle at 70% 70%, rgba(236,72,153,.75), rgba(139,92,246,.55) 45%, transparent 70%);
+}
+.dark .app-bg-blobs::before { opacity: .22; }
+.dark .app-bg-blobs::after { opacity: .2; }
+
+@media (prefers-reduced-motion: reduce) {
+  .app-bg-blobs::before,
+  .app-bg-blobs::after { filter: blur(70px); }
+}
+
+/* Gradient text utility for premium accents */
+.gradient-text {
+  background: linear-gradient(90deg, #38bdf8, #a78bfa, #f472b6);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Slightly brighter glass in dark mode for readability */
+.dark .glass {
+  background: linear-gradient(
+      135deg,
+      color-mix(in oklab, var(--background) 84%, transparent) 0%,
+      color-mix(in oklab, var(--background) 72%, transparent) 100%
+    );
+  border-color: color-mix(in oklab, var(--foreground) 24%, transparent);
+}
