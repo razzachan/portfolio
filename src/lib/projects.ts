@@ -41,7 +41,9 @@ export const projects: Project[] = [
       "Express",
       "Supabase (PostgreSQL)",
       "Railway",
-      "OpenAI GPT-4",
+      "OpenAI GPT-4o",
+      "Augment AI",
+      "GitHub Copilot",
       "Capacitor (PWA)"
     ],
     shortDescription:
@@ -49,7 +51,7 @@ export const projects: Project[] = [
     longDescription:
       "Desenvolvi o sistema completo para a Fix Fogões, um ERP de alta complexidade que centraliza todo o fluxo de atendimento: desde a mensagem inicial no WhatsApp até a conclusão e faturamento do serviço. O sistema inclui agendamento inteligente via IA (processando mensagens em linguagem natural), roteamento automatizado de técnicos por especialidade e localização, gestão avançada de ordens de serviço, calendário com drag & drop, controle financeiro, módulo de garantia, oficinas parceiras e um PWA para uso em campo por técnicos e oficinas.",
     highlights: [
-      "Integração entre WhatsApp, IA (GPT-4), FastAPI, Node.js e Supabase",
+      "Integração entre WhatsApp, IA (GPT-4o), FastAPI, Node.js e Supabase",
       "Sistema de agendamento inteligente que interpreta mensagens e gera pré-agendamentos estruturados",
       "Roteamento automático de técnicos com base em distância, peso de prioridade, carga de trabalho e especialidade",
       "Gestão completa de ordens de serviço, incluindo fotos, histórico de valores e tipos de atendimento",
@@ -86,7 +88,7 @@ export const projects: Project[] = [
       "Node.js",
       "Fastify",
       "Supabase (PostgreSQL)",
-      "OpenAI GPT-4",
+      "OpenAI GPT-4o",
       "Whisper API",
       "Vision API",
       "WhatsApp Web.js",
@@ -98,7 +100,7 @@ export const projects: Project[] = [
     shortDescription:
       "Plataforma SaaS completa para revolucionar o mercado imobiliário brasileiro através de automação inteligente com IA, oferecendo bot de atendimento 24/7, CRM com funil Kanban, lead scoring automático e sistema de billing estratégico de R$ 29 a R$ 1.200/mês.",
     longDescription:
-      "Desenvolvi um SaaS multi-tenant completo com motor de IA proprietário baseado em GPT-4, treinado especificamente para o mercado imobiliário. O sistema processa conversas em tempo real (texto, áudio, imagem e PDF), qualifica leads automaticamente com pontuação 0-100, gerencia funil de vendas com 6 estágios (Captado → Fechado), e oferece 4 planos estratégicos para corretores solo até redes de franquias. Inclui 7 interfaces completas: Product Selection, Dashboard Principal, IA Personalizada, WhatsApp Config, Gestão de Leads, Planos e Relatórios. Arquitetura preparada para escalar até 10.000+ imobiliárias simultaneamente com Row Level Security e processamento multimodal em tempo real.",
+      "Desenvolvi um SaaS multi-tenant completo com motor de IA proprietário baseado em GPT-4o, treinado especificamente para o mercado imobiliário. O sistema processa conversas em tempo real (texto, áudio, imagem e PDF), qualifica leads automaticamente com pontuação 0-100, gerencia funil de vendas com 6 estágios (Captado → Fechado), e oferece 4 planos estratégicos para corretores solo até redes de franquias. Inclui 7 interfaces completas: Product Selection, Dashboard Principal, IA Personalizada, WhatsApp Config, Gestão de Leads, Planos e Relatórios. Arquitetura preparada para escalar até 10.000+ imobiliárias simultaneamente com Row Level Security e processamento multimodal em tempo real.",
     highlights: [
       "Bot IA especializado em imóveis com 87% de taxa de sucesso, processando texto, áudio (Whisper), imagem e PDF com compreensão contextual de bairros, valores e tipos de imóveis",
       "CRM completo com funil Kanban de 6 estágios, lead scoring automático 0-100, histórico completo de interações e ranking de performance de corretores",
@@ -111,8 +113,8 @@ export const projects: Project[] = [
     responsibilities: [
       "Arquitetura completa do sistema multi-tenant com modelagem de 15+ tabelas PostgreSQL, Row Level Security e triggers automatizados para suportar milhares de imobiliárias",
       "Desenvolvimento full-stack de 7 interfaces (React + TypeScript + Tailwind CSS) e APIs REST completas (Node.js + Fastify) com autenticação baseada em roles",
-      "Treinamento de modelo GPT-4 especializado em imóveis com prompt engineering para contexto imobiliário, análise de sentimento e lead scoring automático baseado em IA",
-      "Integração de WhatsApp Web.js, OpenAI APIs (GPT-4, Whisper, Vision), Supabase (auth, storage, database) e sistema de webhooks customizáveis para integrações externas",
+      "Treinamento de modelo GPT-4o especializado em imóveis com prompt engineering para contexto imobiliário, análise de sentimento e lead scoring automático baseado em IA",
+      "Integração de WhatsApp Web.js, OpenAI APIs (GPT-4o, Whisper, Vision), Supabase (auth, storage, database) e sistema de webhooks customizáveis para integrações externas",
       "Estratégia de monetização completa: pesquisa de 83.000+ imobiliárias CRECI, definição dos 4 planos, gatilhos de upsell, projeções financeiras e modelo 'Lock-in + Upsell'",
       "Design de UX/UI com wireframes, protótipos, design system consistente e otimização para conversão, incluindo testes de usabilidade e responsividade completa"
     ],
@@ -126,7 +128,7 @@ export const projects: Project[] = [
     year: 2024,
     role: "Product designer & desenvolvedor frontend",
     type: "Landing Page",
-    stack: ["React", "TypeScript", "Tailwind CSS", "Next.js", "Framer Motion", "WhatsApp Business API"],
+    stack: ["React", "TypeScript", "Tailwind CSS", "Next.js", "Framer Motion", "GitHub Copilot", "v0.dev", "WhatsApp Business API"],
     shortDescription:
       "Landing page estratégica para captação B2B de clientes de gestão de tráfego pago, com arquitetura de conversão baseada em copywriting persuasivo, prova social e fluxo otimizado para WhatsApp Business.",
     longDescription:
@@ -154,11 +156,11 @@ export const projects: Project[] = [
     year: 2024,
     role: "Conversation designer & arquiteto de automação",
     type: "Bot",
-    stack: ["OpenAI GPT-4", "WhatsApp Business API", "Node.js", "Webhook Architecture", "NLP", "CRM Integration"],
+    stack: ["OpenAI GPT-4o", "WhatsApp Business API", "Node.js", "Webhook Architecture", "NLP", "Prompt Engineering", "CRM Integration"],
     shortDescription:
       "Bot conversacional inteligente para clínicas de saúde que automatiza triagem, qualificação e agendamento de pacientes via WhatsApp, reduzindo carga operacional da secretaria em até 60% e melhorando taxa de conversão de agendamentos.",
     longDescription:
-      "Projetei e implementei um sistema completo de automação conversacional para clínicas de saúde, integrando IA (GPT-4) com WhatsApp Business para criar uma experiência de atendimento natural e eficiente. O bot realiza triagem inicial, identifica tipo de atendimento necessário, coleta informações essenciais do paciente, explica procedimentos e políticas da clínica, e direciona para agendamento ou atendimento humano quando necessário. A solução inclui design de conversação estratégico, tratamento de exceções, fallback para humano e integração com sistemas de agenda existentes.",
+      "Projetei e implementei um sistema completo de automação conversacional para clínicas de saúde, integrando IA (GPT-4o) com WhatsApp Business para criar uma experiência de atendimento natural e eficiente. O bot realiza triagem inicial, identifica tipo de atendimento necessário, coleta informações essenciais do paciente, explica procedimentos e políticas da clínica, e direciona para agendamento ou atendimento humano quando necessário. A solução inclui design de conversação estratégico, tratamento de exceções, fallback para humano e integração com sistemas de agenda existentes.",
     highlights: [
       "Design conversacional baseado em NLP que compreende intenções do paciente e responde de forma natural, mantendo tom profissional e empático",
       "Sistema de triagem automatizado que qualifica urgência, tipo de consulta e direciona para especialidade correta, reduzindo 60% da carga da secretaria",
@@ -208,28 +210,28 @@ export const projects: Project[] = [
   },
   {
     slug: "doce-aroma-branding-e-site",
-    title: "Doce Aroma – Identidade Digital & Cardápio Interativo",
-    subtitle: "Sistema de identidade visual digital com cardápio web responsivo e geração de assets otimizados",
+    title: "Doce Aroma – Identidade Digital com IA Generativa",
+    subtitle: "Cardápio web interativo com geração de conteúdo visual via IA e automação de pedidos",
     year: 2025,
-    role: "Product designer & desenvolvedor frontend",
-    type: "Landing Page",
-    stack: ["Figma", "React", "Next.js", "Tailwind CSS", "Stable Diffusion", "Midjourney", "Adobe Photoshop"],
+    role: "IA Engineer & desenvolvedor full-stack",
+    type: "IA & Persona",
+    stack: ["OpenAI GPT-4o", "DALL-E 3", "Cursor AI", "React", "Next.js", "Tailwind CSS", "Prompt Engineering", "v0.dev"],
     shortDescription:
-      "Projeto completo de identidade visual digital e cardápio web interativo para restaurante, incluindo design system, geração de fotografia de produto com IA generativa e implementação de experiência mobile-first para pedidos online.",
+      "Plataforma digital completa para restaurante desenvolvida com IA generativa para criação de conteúdo visual, cardápio web interativo responsivo e sistema de pedidos automatizado via WhatsApp, reduzindo tempo de produção de assets em 80% e melhorando conversão de pedidos online.",
     longDescription:
-      "Desenvolvi um sistema completo de identidade digital para o Doce Aroma, desde a concepção da linguagem visual até a implementação de um cardápio web responsivo e otimizado. O projeto incluiu pesquisa de referências do segmento gastronômico, definição de paleta de cores e tipografia, geração de fotografia de produtos com IA generativa (Midjourney/Stable Diffusion), tratamento e otimização de imagens para web, e desenvolvimento de um cardápio digital interativo com sistema de categorização, busca e integração com WhatsApp para pedidos. Todo o material foi pensado para transmitir qualidade premium e facilitar conversão em pedidos.",
+      "Desenvolvi uma solução completa de identidade digital usando IA generativa para acelerar produção de conteúdo visual. Utilizei DALL-E 3 com prompt engineering avançado para gerar fotografia de produtos (batatas recheadas, shawarmas, tapiocas, açaí) com qualidade fotorrealista, Cursor AI para desenvolvimento ágil do cardápio web, e v0.dev para geração de componentes React otimizados. O sistema inclui cardápio digital interativo com categorização inteligente, busca, modal de detalhes de produtos e integração com WhatsApp Business para pedidos automatizados. Todo o fluxo foi otimizado com lazy loading, WebP, e CDN para performance máxima mesmo com conteúdo visual pesado.",
     highlights: [
-      "Criação de design system completo com componentes reutilizáveis, paleta de cores, tipografia e guidelines de marca para consistência",
-      "Geração de fotografia de produtos com IA generativa usando prompt engineering avançado para criar imagens realistas e apetitosas",
-      "Desenvolvimento de cardápio digital interativo com categorização, filtros, busca e modal de detalhes de produtos com descrição e preços",
-      "Implementação mobile-first com foco em UX de pedidos, incluindo botão flutuante de carrinho e integração com WhatsApp Business",
-      "Otimização de imagens com lazy loading, WebP e CDN para garantir carregamento rápido mesmo com conteúdo visual pesado"
+      "Geração de 40+ imagens de produtos fotorrealistas com DALL-E 3 usando prompt engineering otimizado, reduzindo tempo de produção em 80% comparado a fotografia tradicional",
+      "Desenvolvimento acelerado com Cursor AI e v0.dev, gerando componentes React otimizados e design system consistente em 60% menos tempo",
+      "Sistema de prompt engineering estruturado com templates reutilizáveis para manter consistência visual entre todos os produtos (iluminação, ângulo, estilo)",
+      "Cardápio digital interativo com categorização inteligente, busca semântica, modal de detalhes e integração com WhatsApp Business para pedidos automatizados",
+      "Performance otimizada com lazy loading, conversão automática para WebP, CDN e code splitting, garantindo LCP < 2.5s mesmo com 40+ imagens de alta qualidade"
     ],
     responsibilities: [
-      "Pesquisa de mercado e benchmarking de concorrentes para definir posicionamento visual e diferenciação da marca",
-      "Criação de design system no Figma incluindo componentes, cores, tipografia e guidelines de uso da identidade",
-      "Geração e pós-produção de imagens de produtos usando IA generativa e Adobe Photoshop para ajustes finais",
-      "Desenvolvimento frontend do cardápio digital com React + Next.js, incluindo sistema de categorias e integração com WhatsApp"
+      "Desenvolvimento de sistema de prompt engineering com templates estruturados para DALL-E 3, garantindo consistência visual em 40+ produtos diferentes",
+      "Implementação de pipeline de geração automatizada de assets: prompts → DALL-E 3 → otimização WebP → upload CDN com scripts Node.js",
+      "Desenvolvimento full-stack do cardápio digital usando Cursor AI e v0.dev para aceleração de código, incluindo componentes React, sistema de categorias e busca",
+      "Integração com WhatsApp Business API para automação de pedidos, incluindo webhook architecture e formatação automática de mensagens estruturadas"
     ],
     status: "Em desenvolvimento",
     images: ["/projects/doce-aroma-branding-e-site/01.svg"]
