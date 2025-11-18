@@ -1,51 +1,72 @@
-export const metadata = {
-  title: "Contato",
-  description: "Entre em contato com Julio Cesar Betoni para projetos, consultorias ou oportunidades.",
+import type { Metadata } from 'next'
+import Link from 'next/link'
+import { Button } from '@/components/ui/Button'
+import SectionHeader from '@/components/ui/SectionHeader'
+import JsonLd from '@/components/seo/JsonLd'
+
+export const metadata: Metadata = {
+  title: 'Contato — Julio Betoni',
+  description: 'Fale comigo para construir SaaS, automações, bots e integrações com IA para negócios reais.',
+  openGraph: {
+    title: 'Contato — Julio Betoni',
+    description: 'Fale comigo para construir SaaS, automações, bots e integrações com IA para negócios reais.',
+    images: ['/og.svg'],
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    images: ['/og.svg'],
+  },
 };
 
 export default function ContactPage() {
+  const base = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'
   return (
-    <main className="bg-white dark:bg-zinc-900">
-      <div className="mx-auto max-w-4xl px-6 py-20">
-        <h2 className="font-display text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50">
-          Fale comigo
-        </h2>
-        <p className="mt-6 text-lg leading-relaxed text-zinc-600 dark:text-zinc-400">
-          Se você quer tirar uma ideia do papel ou precisa evoluir um sistema que já existe, podemos conversar. Vou direto ao ponto e proponho caminhos práticos.
-        </p>
-        <div className="mt-10 flex flex-wrap gap-4">
-          <a
-            href="https://wa.me/5548988644305"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-full bg-zinc-900 px-6 py-3 text-sm font-semibold text-white shadow-lg transition-all hover:bg-zinc-700 hover:shadow-xl dark:bg-zinc-50 dark:text-zinc-900 dark:hover:bg-zinc-200"
-          >
-            💬 WhatsApp
-          </a>
-          <a
-            href="mailto:akroma.julio@gmail.com"
-            className="inline-flex items-center gap-2 rounded-full border border-zinc-300 bg-white px-6 py-3 text-sm font-semibold text-zinc-900 shadow-sm transition-all hover:bg-zinc-50 dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-50 dark:hover:bg-zinc-700"
-          >
-            ✉️ Email
-          </a>
-          <a
-            href="https://www.linkedin.com/in/juliobetoni/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-full border border-zinc-300 bg-white px-6 py-3 text-sm font-semibold text-zinc-900 shadow-sm transition-all hover:bg-zinc-50 dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-50 dark:hover:bg-zinc-700"
-          >
-            in LinkedIn
-          </a>
-          <a
-            href="https://github.com/razzachan"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-full border border-zinc-300 bg-white px-6 py-3 text-sm font-semibold text-zinc-900 shadow-sm transition-all hover:bg-zinc-50 dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-50 dark:hover:bg-zinc-700"
-          >
-            GitHub
-          </a>
-        </div>
+    <div className="max-w-2xl">
+      <JsonLd
+        data={{
+          '@context': 'https://schema.org',
+          '@type': 'ContactPage',
+          name: 'Contato — Julio Betoni',
+          url: `${base}/contact`,
+          mainEntity: {
+            '@type': 'Person',
+            name: 'Julio Betoni',
+            contactPoint: [
+              {
+                '@type': 'ContactPoint',
+                contactType: 'business',
+                availableLanguage: ['Portuguese', 'English'],
+                url: 'https://wa.me/5548988644305',
+              },
+              {
+                '@type': 'ContactPoint',
+                contactType: 'email',
+                email: 'akroma.julio@gmail.com',
+              },
+            ],
+          },
+        }}
+      />
+      <SectionHeader title="Fale comigo" />
+      <p className="mt-2 text-foreground/80">
+        Se você quer tirar uma ideia do papel ou precisa evoluir um sistema que já existe, podemos conversar. Vou
+        direto ao ponto e proponho caminhos práticos.
+      </p>
+      <div className="mt-6 flex flex-wrap gap-3">
+        <Link href="https://wa.me/5548988644305" target="_blank">
+          <Button>💬 WhatsApp</Button>
+        </Link>
+        <Link href="mailto:akroma.julio@gmail.com">
+          <Button variant="outline">✉️ Email</Button>
+        </Link>
+        <Link href="https://www.linkedin.com/in/juliobetoni/" target="_blank">
+          <Button variant="ghost">in LinkedIn</Button>
+        </Link>
+        <Link href="https://github.com/razzachan" target="_blank">
+          <Button variant="ghost">GitHub</Button>
+        </Link>
       </div>
-    </main>
-  );
+    </div>
+  )
 }

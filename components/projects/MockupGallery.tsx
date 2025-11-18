@@ -1,4 +1,4 @@
-import ProgressiveImage from '@/app/components/ui/ProgressiveImage'
+import ProgressiveImage from '@/components/ui/ProgressiveImage'
 import MockupPlaceholder from './MockupPlaceholder'
 
 type Img = { src: string; alt?: string }
@@ -20,14 +20,16 @@ function deriveAlt(src: string, i: number, projectTitle?: string) {
   return projectTitle ? `${projectTitle} — ${label}` : label
 }
 
-export default function MockupGallery({ images, projectTitle }: { images?: Img[]; projectTitle?: string }) {
+export default function MockupGallery({ images, projectTitle }: { images?: (Img | string)[]; projectTitle?: string }) {
   const defaults: Img[] = [
     { src: '/mockups/mock-1.svg', alt: 'Mockup 1' },
     { src: '/mockups/mock-2.svg', alt: 'Mockup 2' },
     { src: '/mockups/mock-3.svg', alt: 'Mockup 3' },
     { src: '/mockups/mock-4.svg', alt: 'Mockup 4' },
   ]
-  const list = images && images.length > 0 ? images : defaults
+  const rawList = images && images.length > 0 ? images : defaults
+  // Normalize to Img[] format
+  const list: Img[] = rawList.map(img => typeof img === 'string' ? { src: img } : img)
 
   return (
     <div className="grid gap-4 md:grid-cols-2">

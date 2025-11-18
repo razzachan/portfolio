@@ -72,14 +72,15 @@ export default function FeaturedProjectCard({ project, bullets, priority }: Prop
             whileHover={{ scale: 1.02 }}
             className="relative h-44 md:h-full min-h-40 w-full overflow-hidden rounded-xl border border-foreground/10 shadow-soft"
           >
-            <ProgressiveImage
+            <img
               src={typeof thumb === 'string' ? thumb : thumb.src}
               alt={typeof thumb === 'string' ? `${project.title} — Mockup` : (thumb.alt || `${project.title} — Mockup`)}
-              fill
-              sizes="(min-width:1024px) 50vw, (min-width:768px) 50vw, 100vw"
-              className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
-              priority={priority}
-              forceVisible
+              className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+              loading={priority ? 'eager' : 'lazy'}
+              onError={(e) => {
+                e.currentTarget.style.display = 'none';
+                console.error('Failed to load:', e.currentTarget.src);
+              }}
             />
             <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_top,rgba(0,0,0,.38),transparent_55%)]" />
             <span className="absolute left-3 top-3 inline-flex items-center rounded-full bg-foreground/90 px-2 py-1 text-[10px] font-medium tracking-wide text-background/90 backdrop-blur-sm">

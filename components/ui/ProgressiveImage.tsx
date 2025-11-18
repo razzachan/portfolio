@@ -25,6 +25,7 @@ export default function ProgressiveImage({ wrapperClassName = "", shimmer = true
         className={className + (show ? " opacity-100" : " opacity-0")}
         onLoad={() => setLoaded(true)}
         onLoadingComplete={() => setLoaded(true)}
+        unoptimized={isSvg}
       />
       <div
         className={

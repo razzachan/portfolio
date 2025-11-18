@@ -6,7 +6,7 @@ import { motion } from 'framer-motion'
 import type { Project } from '@/src/lib/projects'
 import { memo } from 'react'
 import { useRouter } from 'next/navigation'
-import ProgressiveImage from '@/app/components/ui/ProgressiveImage'
+import ProgressiveImage from '@/components/ui/ProgressiveImage'
 
 type Props = {
   project: Project
@@ -29,7 +29,17 @@ function ProjectCard({ project, bullets }: Props) {
     >
       {/* Mini mockup / thumbnail */}
       <div className="relative mb-4" aria-hidden>
-        {thumb ? (
+        {thumb && typeof thumb === 'string' ? (
+          <div className="relative h-32 w-full overflow-hidden rounded-xl border border-foreground/10">
+            <img
+              src={thumb}
+              alt={`${project.title} — Mockup`}
+              className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+              loading="lazy"
+            />
+            <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_top,rgba(0,0,0,.18),transparent_50%)]" />
+          </div>
+        ) : thumb && typeof thumb === 'object' ? (
           <div className="relative h-32 w-full overflow-hidden rounded-xl border border-foreground/10">
             <ProgressiveImage
               src={thumb.src}

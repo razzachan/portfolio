@@ -1,189 +1,176 @@
-import { notFound } from "next/navigation";
-import Link from "next/link";
-import { getProjectBySlug, projects } from "@/src/lib/projects";
-import { jsonLdScript, projectJsonLd } from "@/src/lib/seo";
-import CaseTOC from "@/components/projects/CaseTOC";
-import CaseTOCMobile from "@/components/projects/CaseTOCMobile";
-import ReadingProgress from "@/components/projects/ReadingProgress";
-import ProgressiveImage from "@/components/ui/ProgressiveImage";
-import MockupGallery from "@/components/projects/MockupGallery";
+import { notFound } from 'next/navigation'
+import type { Metadata } from 'next'
+import JsonLd from '@/components/seo/JsonLd'
+import { projects } from '@/src/lib/projects'
+import ProjectHeader from '@/components/projects/ProjectHeader'
+import ProjectHighlights from '@/components/projects/ProjectHighlights'
+import ProjectStack from '@/components/projects/ProjectStack'
+import ProjectResponsibilities from '@/components/projects/ProjectResponsibilities'
+import ProjectNavigation from '@/components/projects/ProjectNavigation'
+import MockupGallery from '@/components/projects/MockupGallery'
+import CaseSection from '@/components/projects/CaseSection'
+import ProjectImpact from '@/components/projects/ProjectImpact'
+import ProjectLinks from '@/components/projects/ProjectLinks'
+import { Target, AlertTriangle, Wrench, Sparkles, Layers, Images, Link as LinkIcon, MessageSquare } from 'lucide-react'
+import ReadingProgress from '@/components/ui/ReadingProgress'
+import CaseTOC from '@/components/projects/CaseTOC'
+import CaseTOCMobile from '@/components/projects/CaseTOCMobile'
 
 export function generateStaticParams() {
-  return projects.map((p) => ({ slug: p.slug }));
+  return projects.map((p) => ({ slug: p.slug }))
 }
 
-export function generateMetadata({ params }: { params: { slug: string } }) {
-  const project = getProjectBySlug(params.slug);
-  if (!project) return {};
-  return {
-    title: project.title,
-    description: project.shortDescription,
-    openGraph: {
-      title: project.title,
-      description: project.shortDescription,
-      type: "article",
-      url: `https://julio.betoni.dev/projects/${project.slug}`,
-    },
-  };
-}
+export default async function ProjectDetail({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params
+  const project = projects.find((p) => p.slug === slug)
+  if (!project) return notFound()
 
-export default function ProjectPage({ params }: { params: { slug: string } }) {
-  const project = getProjectBySlug(params.slug);
-  if (!project) return notFound();
+  const idx = projects.findIndex((p) => p.slug === project.slug)
+  const prev = idx > 0 ? projects[idx - 1] : undefined
+  const next = idx < projects.length - 1 ? projects[idx + 1] : undefined
+  const base = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'
+  const url = `${base}/projects/${project.slug}`
+  const galleryImages = project.images
 
-  const headings = [
-    { id: "overview", label: "Visão geral" },
-    { id: "highlights", label: "Destaques" },
-    { id: "stack", label: "Stack" },
-    { id: "responsibilities", label: "Responsabilidades" },
-  ];
+  const toc = [
+    { id: 'contexto', label: 'Contexto e Objetivo' },
+    { id: 'desafio', label: 'O Desafio' },
+    { id: 'solucao', label: 'A Solução' },
+    { id: 'impacto', label: 'Impacto Real' },
+    { id: 'tecnologias', label: 'Tecnologias' },
+    { id: 'responsabilidades', label: 'Minhas Responsabilidades' },
+    { id: 'galeria', label: 'Galeria' },
+    { id: 'links', label: 'Links' },
+    { id: 'contato', label: 'CTA Final' },
+  ] as const
 
   return (
-    <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: jsonLdScript(
-            projectJsonLd({
-              title: project.title,
-              slug: project.slug,
-              description: project.shortDescription,
-            })
-          ),
+    <div className="space-y-12">
+      <ReadingProgress />
+      <JsonLd
+        data={{
+          '@context': 'https://schema.org',
+          '@type': 'Project',
+          name: project.title,
+          description: project.shortDescription,
+          url,
+          creator: {
+            '@type': 'Person',
+            name: 'Julio Betoni',
+          },
+          dateCreated: `${project.year}-01-01`,
+          keywords: project.stack,
         }}
       />
-      <ReadingProgress />
-      
-      <main className="bg-white dark:bg-zinc-900">
-        {/* Hero */}
-        <div className="border-b border-zinc-200 bg-zinc-50 dark:border-zinc-800 dark:bg-zinc-950">
-          <div className="mx-auto max-w-7xl px-6 py-16">
-            {project.images && project.images.length > 0 && (
-              <div className="mb-8 aspect-video w-full overflow-hidden rounded-xl">
-                <ProgressiveImage
-                  src={project.images[0]}
-                  alt={project.title}
-                  width={1200}
-                  height={630}
-                  className="h-full w-full object-cover"
-                  priority
-                />
-              </div>
-            )}
-            <div className="mb-4 flex items-center gap-2">
-              <span className="inline-block rounded-full bg-zinc-200 px-3 py-1 text-xs font-medium text-zinc-700 dark:bg-zinc-800 dark:text-zinc-300">
-                {project.type}
-              </span>
-              {project.status && (
-                <span className="inline-block rounded-full bg-green-100 px-3 py-1 text-xs font-medium text-green-700 dark:bg-green-900/30 dark:text-green-400">
-                  {project.status}
-                </span>
-              )}
-              <span className="text-sm text-zinc-500 dark:text-zinc-500">{project.year}</span>
-            </div>
-            <h1 className="font-display text-4xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50 sm:text-5xl">
-              {project.title}
-            </h1>
-            <p className="mt-4 text-xl text-zinc-600 dark:text-zinc-400">{project.subtitle}</p>
-            <p className="mt-2 text-sm text-zinc-500 dark:text-zinc-500">Papel: {project.role}</p>
-            {project.links && (project.links.demo || project.links.repo) && (
-              <div className="mt-6 flex gap-3">
-                {project.links.demo && (
-                  <a
-                    href={project.links.demo}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="rounded-full bg-zinc-900 px-5 py-2.5 text-sm font-semibold text-white shadow transition-all hover:bg-zinc-700 dark:bg-zinc-50 dark:text-zinc-900 dark:hover:bg-zinc-200"
-                  >
-                    Ver Demo
-                  </a>
-                )}
-                {project.links.repo && (
-                  <a
-                    href={project.links.repo}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="rounded-full border border-zinc-300 bg-white px-5 py-2.5 text-sm font-semibold text-zinc-900 shadow-sm transition-all hover:bg-zinc-50 dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-50 dark:hover:bg-zinc-700"
-                  >
-                    Ver Repositório
-                  </a>
-                )}
-              </div>
-            )}
-          </div>
+      <JsonLd
+        data={{
+          '@context': 'https://schema.org',
+          '@type': 'BreadcrumbList',
+          itemListElement: [
+            { '@type': 'ListItem', position: 1, name: 'Home', item: base },
+            { '@type': 'ListItem', position: 2, name: 'Projetos', item: `${base}/projects` },
+            { '@type': 'ListItem', position: 3, name: project.title, item: url },
+          ],
+        }}
+      />
+      <ProjectHeader project={project} />
+
+      <div className="grid gap-10 lg:grid-cols-[1fr_280px]">
+        <div className="space-y-12">
+      <CaseTOCMobile items={toc as any} />
+      <CaseSection id="contexto" title="Contexto e Objetivo" icon={<Target size={16} /> }>
+        <p>{project.shortDescription}</p>
+        {/* Decisão: uso shortDescription para overview rápido conforme spec. */}
+      </CaseSection>
+
+      <CaseSection id="desafio" title="O Desafio" icon={<AlertTriangle size={16} /> }>
+        <p>
+          Este projeto nasce de necessidades reais: organizar fluxo, reduzir erros operacionais e criar base para
+          escala. A demanda incluía integrar diferentes fontes de informação e eliminar processos manuais repetitivos.
+          {/* Decisão de copy: texto gerado para preencher seção 'Desafio' conforme wireframe; pode ser editado. */}
+        </p>
+      </CaseSection>
+
+      <CaseSection id="solucao" title="A Solução Que Eu Construí" icon={<Wrench size={16} /> }>
+        <p>{project.longDescription}</p>
+        <ProjectHighlights items={project.highlights} />
+      </CaseSection>
+
+      <CaseSection id="impacto" title="Impacto Real" icon={<Sparkles size={16} /> }>
+        <ProjectImpact slug={project.slug} />
+      </CaseSection>
+
+      <CaseSection id="tecnologias" title="Tecnologias Utilizadas" icon={<Layers size={16} /> }>
+        <ProjectStack stack={project.stack} />
+      </CaseSection>
+
+      <CaseSection id="responsabilidades" title="Minhas Responsabilidades" icon={<Target size={16} /> }>
+        <ProjectResponsibilities items={project.responsibilities} />
+      </CaseSection>
+
+      <CaseSection id="galeria" title="Galeria de Mockups" icon={<Images size={16} /> }>
+        <MockupGallery images={galleryImages} projectTitle={project.title} />
+      </CaseSection>
+
+      <CaseSection id="links" title="Links" icon={<LinkIcon size={16} /> }>
+        <ProjectLinks demo={project.links?.demo} repo={project.links?.repo} />
+      </CaseSection>
+
+      <CaseSection id="contato" title="CTA Final" icon={<MessageSquare size={16} /> }>
+        <p>
+          Quer construir algo assim ou levar sua operação para o próximo nível com automação e IA aplicada? Vamos
+          conversar.
+        </p>
+        <a
+          href="https://wa.me/5548988644305"
+          target="_blank"
+          rel="noreferrer"
+          className="inline-flex mt-2 text-sm font-medium underline"
+        >
+          💬 Falar comigo agora
+        </a>
+      </CaseSection>
+
+      <section className="pt-2">
+        <ProjectNavigation
+          prev={prev && { slug: prev.slug, title: prev.title }}
+          next={next && { slug: next.slug, title: next.title }}
+        />
+      </section>
         </div>
+        <CaseTOC items={toc as any} />
+      </div>
+    </div>
+  )
+}
 
-        {/* Content */}
-        <div className="mx-auto max-w-7xl px-6 py-16">
-          <div className="lg:hidden mb-8">
-            <CaseTOCMobile headings={headings} />
-          </div>
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params
+  const project = projects.find((p) => p.slug === slug)
+  if (!project) return { title: 'Projeto não encontrado' }
 
-          <div className="grid grid-cols-1 gap-12 lg:grid-cols-4">
-            <aside className="lg:col-span-1">
-              <div className="sticky top-24">
-                <CaseTOC headings={headings} />
-              </div>
-            </aside>
+  const base = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'
+  const url = `${base}/projects/${project.slug}`
+  const title = `${project.title} — Case`
+  const description = project.shortDescription
 
-            <article className="lg:col-span-3">
-              <div className="prose prose-zinc max-w-none dark:prose-invert prose-headings:font-display prose-headings:font-semibold prose-h2:text-2xl prose-h2:tracking-tight prose-p:leading-relaxed">
-                <section id="overview">
-                  <h2>Visão geral</h2>
-                  <p>{project.longDescription}</p>
-                </section>
-
-                <section id="highlights" className="mt-12">
-                  <h2>Destaques</h2>
-                  <ul>
-                    {project.highlights.map((h, i) => (
-                      <li key={i}>{h}</li>
-                    ))}
-                  </ul>
-                </section>
-
-                <section id="stack" className="mt-12">
-                  <h2>Stack Técnica</h2>
-                  <div className="not-prose flex flex-wrap gap-2">
-                    {project.stack.map((tech) => (
-                      <span
-                        key={tech}
-                        className="inline-block rounded-lg border border-zinc-200 bg-zinc-50 px-3 py-1.5 text-sm font-medium text-zinc-700 dark:border-zinc-800 dark:bg-zinc-800 dark:text-zinc-300"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                </section>
-
-                {project.images && project.images.length > 1 && (
-                  <section className="mt-12">
-                    <h2>Galeria</h2>
-                    <div className="not-prose mt-6">
-                      <MockupGallery images={project.images.slice(1).map((src) => ({ src }))} />
-                    </div>
-                  </section>
-                )}
-
-                <section id="responsibilities" className="mt-12">
-                  <h2>Responsabilidades</h2>
-                  <ul>
-                    {project.responsibilities.map((r, i) => (
-                      <li key={i}>{r}</li>
-                    ))}
-                  </ul>
-                </section>
-              </div>
-            </article>
-          </div>
-
-          <div className="mt-16 border-t border-zinc-200 pt-8 dark:border-zinc-800">
-            <Link href="/projects" className="text-sm text-zinc-600 underline dark:text-zinc-400">
-              ← Voltar para Projetos
-            </Link>
-          </div>
-        </div>
-      </main>
-    </>
-  );
+  return {
+    title,
+    description,
+    alternates: { canonical: url },
+    openGraph: {
+      type: 'article',
+      url,
+      title,
+      description,
+      siteName: 'Julio Betoni — Portfólio',
+      images: [`${base}/projects/${project.slug}/opengraph-image`],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      images: [`${base}/projects/${project.slug}/twitter-image`],
+    },
+  }
 }
