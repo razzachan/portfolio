@@ -274,10 +274,6 @@ export const projects: Project[] = [
       "Configuração de build system com PyInstaller (2 spec files customizados), scripts PowerShell para automação, empacotamento de assets e configurações, e sistema de single-instance com mutex Win32"
     ],
     status: "MVP",
-      "Integração com OpenCV e PyAutoGUI para detecção de pixel e telas",
-      "Configuração de empacotamento com PyInstaller"
-    ],
-    status: "Em desenvolvimento",
     images: ["/projects/miracle-bot-tibia-74/01.svg"]
   }
 ];
