@@ -25,8 +25,8 @@ export type Project = {
 export const projects: Project[] = [
   {
     slug: "eletrofix-hub-pro-fix-fogoes",
-    title: "EletroFix Hub Pro – Sistema completo para assistência técnica",
-    subtitle: "ERP + IA + WhatsApp para gestão de assistência técnica (Fix Fogões)",
+    title: "Fix Fogões – Sistema completo para assistência técnica",
+    subtitle: "ERP + IA + WhatsApp para gestão de assistência técnica",
     year: 2024,
     role: "Full-stack developer & arquiteto de sistema",
     type: "SaaS",
@@ -47,7 +47,7 @@ export const projects: Project[] = [
     shortDescription:
       "Plataforma completa para assistências técnicas, com agendamento inteligente via WhatsApp, gestão de ordens de serviço, técnicos, clientes, oficinas, financeiro, garantia e PWA para equipe em campo.",
     longDescription:
-      "Desenvolvi o EletroFix Hub Pro, um sistema full-stack de alta complexidade para a Fix Fogões, que centraliza todo o fluxo de atendimento: desde a mensagem inicial no WhatsApp até a conclusão e faturamento do serviço. O sistema inclui agendamento inteligente via IA (processando mensagens em linguagem natural), roteamento automatizado de técnicos por especialidade e localização, gestão avançada de ordens de serviço, calendário com drag & drop, controle financeiro, módulo de garantia, oficinas parceiras e um PWA para uso em campo por técnicos e oficinas.",
+      "Desenvolvi o sistema completo para a Fix Fogões, um ERP de alta complexidade que centraliza todo o fluxo de atendimento: desde a mensagem inicial no WhatsApp até a conclusão e faturamento do serviço. O sistema inclui agendamento inteligente via IA (processando mensagens em linguagem natural), roteamento automatizado de técnicos por especialidade e localização, gestão avançada de ordens de serviço, calendário com drag & drop, controle financeiro, módulo de garantia, oficinas parceiras e um PWA para uso em campo por técnicos e oficinas.",
     highlights: [
       "Integração entre WhatsApp, IA (GPT-4), FastAPI, Node.js e Supabase",
       "Sistema de agendamento inteligente que interpreta mensagens e gera pré-agendamentos estruturados",
