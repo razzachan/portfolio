@@ -29,25 +29,13 @@ function ProjectCard({ project, bullets }: Props) {
     >
       {/* Mini mockup / thumbnail */}
       <div className="relative mb-4" aria-hidden>
-        {thumb && typeof thumb === 'string' ? (
+        {thumb ? (
           <div className="relative h-32 w-full overflow-hidden rounded-xl border border-foreground/10">
             <img
               src={thumb}
               alt={`${project.title} — Mockup`}
               className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
               loading="lazy"
-            />
-            <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_top,rgba(0,0,0,.18),transparent_50%)]" />
-          </div>
-        ) : thumb && typeof thumb === 'object' ? (
-          <div className="relative h-32 w-full overflow-hidden rounded-xl border border-foreground/10">
-            <ProgressiveImage
-              src={thumb.src}
-              alt={thumb.alt || `${project.title} — Mockup`}
-              fill
-              sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
-              className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
-              priority={false}
             />
             <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_top,rgba(0,0,0,.18),transparent_50%)]" />
           </div>

@@ -17,8 +17,8 @@ export default function FeaturedProjectCard({ project, bullets, priority }: Prop
   const router = useRouter();
   const stack = project.stack.slice(0, 4);
   const thumb = project.images?.[0];
-  const thumbSrc = typeof thumb === 'string' ? thumb : thumb?.src;
-  const thumbAlt = typeof thumb === 'string' ? `${project.title} — Mockup` : (thumb?.alt || `${project.title} — Mockup`);
+  const thumbSrc = thumb || '';
+  const thumbAlt = `${project.title} — Mockup`;
   const href = `/projects/${project.slug}`;
   return (
     <motion.article
