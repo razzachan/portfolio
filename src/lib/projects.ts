@@ -128,14 +128,13 @@ export const projects: Project[] = [
     ],
     status: "MVP",
     images: [
-      "/imagens/Nexolar/hero.png",
-      "/imagens/Nexolar/1.png",
-      "/imagens/Nexolar/2.png",
-      "/imagens/Nexolar/3.png",
-      "/imagens/Nexolar/imoveis.png",
-      "/imagens/Nexolar/descricao-imovel.png",
-      "/imagens/Nexolar/descricao-imovel2.png",
-      "/imagens/Nexolar/avaliacao-do-bairro.png"
+      "/imagens/ImmoFlow/escolha produto ideal.png",
+      "/imagens/ImmoFlow/dashboard.png",
+      "/imagens/ImmoFlow/IA personalizada.png",
+      "/imagens/ImmoFlow/configurações.png",
+      "/imagens/ImmoFlow/gestao de leads.png",
+      "/imagens/ImmoFlow/planos.png",
+      "/imagens/ImmoFlow/relatorios.png"
     ]
   },
   {
