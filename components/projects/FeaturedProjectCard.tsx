@@ -17,6 +17,8 @@ export default function FeaturedProjectCard({ project, bullets, priority }: Prop
   const router = useRouter();
   const stack = project.stack.slice(0, 4);
   const thumb = project.images?.[0];
+  const thumbSrc = typeof thumb === 'string' ? thumb : thumb?.src;
+  const thumbAlt = typeof thumb === 'string' ? `${project.title} — Mockup` : (thumb?.alt || `${project.title} — Mockup`);
   const href = `/projects/${project.slug}`;
   return (
     <motion.article
@@ -73,8 +75,8 @@ export default function FeaturedProjectCard({ project, bullets, priority }: Prop
             className="relative h-44 md:h-full min-h-40 w-full overflow-hidden rounded-xl border border-foreground/10 shadow-soft"
           >
             <img
-              src={typeof thumb === 'string' ? thumb : thumb.src}
-              alt={typeof thumb === 'string' ? `${project.title} — Mockup` : (thumb.alt || `${project.title} — Mockup`)}
+              src={thumbSrc}
+              alt={thumbAlt}
               className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
               loading={priority ? 'eager' : 'lazy'}
               onError={(e) => {
