@@ -14,6 +14,7 @@ export default function ProjectsPageClient() {
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
+  const [isLoading, setIsLoading] = useState(true);
 
   const allowed: Array<ProjectType | "Todos"> = [
     "Todos",
@@ -32,6 +33,7 @@ export default function ProjectsPageClient() {
     if (typeParam && allowed.includes(typeParam as any)) {
       setActive(typeParam as ProjectType | "Todos");
     }
+    setIsLoading(false);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [searchParams]);
 
@@ -54,6 +56,17 @@ export default function ProjectsPageClient() {
     if (active === "Todos") return projects;
     return projects.filter((p) => p.type === active);
   }, [active]);
+
+  if (isLoading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="text-center">
+          <div className="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-current border-r-transparent mb-4"></div>
+          <p className="text-sm text-foreground/60">Carregando projetos...</p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="space-y-8">
