@@ -71,13 +71,12 @@ export const projects: Project[] = [
     links: {},
     status: "Em produção",
     images: [
-      "/imagens/Fix Fogoes/hero.png",
-      "/imagens/Fix Fogoes/Assistente IA.png",
-      "/imagens/Fix Fogoes/calendario.png",
-      "/imagens/Fix Fogoes/dashboard.png",
-      "/imagens/Fix Fogoes/IA.png",
-      "/imagens/Fix Fogoes/ordens de serviço.png",
-      "/imagens/Fix Fogoes/relatorios.png"
+      "/imagens/FixFogoes/dashboard.png",
+      "/imagens/FixFogoes/Assistente IA.png",
+      "/imagens/FixFogoes/calendario.png",
+      "/imagens/FixFogoes/IA.png",
+      "/imagens/FixFogoes/ordens de serviço.png",
+      "/imagens/FixFogoes/relatorios.png"
     ]
   },
   {
@@ -128,8 +127,8 @@ export const projects: Project[] = [
     ],
     status: "MVP",
     images: [
-      "/imagens/ImmoFlow/escolha produto ideal.png",
       "/imagens/ImmoFlow/dashboard.png",
+      "/imagens/ImmoFlow/escolha produto ideal.png",
       "/imagens/ImmoFlow/IA personalizada.png",
       "/imagens/ImmoFlow/configurações.png",
       "/imagens/ImmoFlow/gestao de leads.png",
@@ -220,12 +219,12 @@ export const projects: Project[] = [
     ],
     status: "Em produção",
     images: [
-      "/imagens/Pulse Trafego Pago/hero.png",
-      "/imagens/Pulse Trafego Pago/1.png",
-      "/imagens/Pulse Trafego Pago/2.png",
-      "/imagens/Pulse Trafego Pago/3.png",
-      "/imagens/Pulse Trafego Pago/4.png",
-      "/imagens/Pulse Trafego Pago/5.png"
+      "/imagens/PulseTrafegoPago/hero.png",
+      "/imagens/PulseTrafegoPago/1.png",
+      "/imagens/PulseTrafegoPago/2.png",
+      "/imagens/PulseTrafegoPago/3.png",
+      "/imagens/PulseTrafegoPago/4.png",
+      "/imagens/PulseTrafegoPago/5.png"
     ]
   },
   {
@@ -255,11 +254,11 @@ export const projects: Project[] = [
     ],
     status: "Em produção",
     images: [
-      "/imagens/Pulse Clinicas/hero.png",
-      "/imagens/Pulse Clinicas/1.png",
-      "/imagens/Pulse Clinicas/2.png",
-      "/imagens/Pulse Clinicas/3.png",
-      "/imagens/Pulse Clinicas/bot.png"
+      "/imagens/PulseClinicas/hero.png",
+      "/imagens/PulseClinicas/1.png",
+      "/imagens/PulseClinicas/2.png",
+      "/imagens/PulseClinicas/3.png",
+      "/imagens/PulseClinicas/bot.png"
     ]
   },
   {
@@ -292,15 +291,15 @@ export const projects: Project[] = [
     },
     status: "Em produção",
     images: [
-      "/imagens/Feirao do ar condicionado/hero.png",
-      "/imagens/Feirao do ar condicionado/1.png",
-      "/imagens/Feirao do ar condicionado/2.png",
-      "/imagens/Feirao do ar condicionado/admin1.png",
-      "/imagens/Feirao do ar condicionado/admin2.png",
-      "/imagens/Feirao do ar condicionado/admin3.png",
-      "/imagens/Feirao do ar condicionado/admin4.png",
-      "/imagens/Feirao do ar condicionado/admin-config-produtos.png",
-      "/imagens/Feirao do ar condicionado/admin-config-produtos2.png"
+      "/imagens/FeiraodoArcondicionado/hero.png",
+      "/imagens/FeiraodoArcondicionado/1.png",
+      "/imagens/FeiraodoArcondicionado/2.png",
+      "/imagens/FeiraodoArcondicionado/admin1.png",
+      "/imagens/FeiraodoArcondicionado/admin2.png",
+      "/imagens/FeiraodoArcondicionado/admin3.png",
+      "/imagens/FeiraodoArcondicionado/admin4.png",
+      "/imagens/FeiraodoArcondicionado/admin-config-produtos.png",
+      "/imagens/FeiraodoArcondicionado/admin-config-produtos2.png"
     ]
   },
   {
@@ -330,14 +329,14 @@ export const projects: Project[] = [
     ],
     status: "Em desenvolvimento",
     images: [
-      "/imagens/Doce Aroma/hero.png",
-      "/imagens/Doce Aroma/1.png",
-      "/imagens/Doce Aroma/2.png",
-      "/imagens/Doce Aroma/3.png",
-      "/imagens/Doce Aroma/4.png",
-      "/imagens/Doce Aroma/5.png",
-      "/imagens/Doce Aroma/6.png",
-      "/imagens/Doce Aroma/7.png"
+      "/imagens/DoceAroma/hero.png",
+      "/imagens/DoceAroma/1.png",
+      "/imagens/DoceAroma/2.png",
+      "/imagens/DoceAroma/3.png",
+      "/imagens/DoceAroma/4.png",
+      "/imagens/DoceAroma/5.png",
+      "/imagens/DoceAroma/6.png",
+      "/imagens/DoceAroma/7.png"
     ]
   },
   {
