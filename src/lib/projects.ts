@@ -70,7 +70,15 @@ export const projects: Project[] = [
     ],
     links: {},
     status: "Em produção",
-    images: ["/projects/eletrofix-hub-pro-fix-fogoes/01.svg"]
+    images: [
+      "/imagens/Fix Fogoes/hero.png",
+      "/imagens/Fix Fogoes/Assistente IA.png",
+      "/imagens/Fix Fogoes/calendario.png",
+      "/imagens/Fix Fogoes/dashboard.png",
+      "/imagens/Fix Fogoes/IA.png",
+      "/imagens/Fix Fogoes/ordens de serviço.png",
+      "/imagens/Fix Fogoes/relatorios.png"
+    ]
   },
   {
     slug: "immoflow-saas-imobiliarias",
@@ -119,7 +127,72 @@ export const projects: Project[] = [
       "Design de UX/UI com wireframes, protótipos, design system consistente e otimização para conversão, incluindo testes de usabilidade e responsividade completa"
     ],
     status: "MVP",
-    images: ["/projects/immoflow-saas-imobiliarias/01.svg"]
+    images: [
+      "/imagens/Nexolar/hero.png",
+      "/imagens/Nexolar/1.png",
+      "/imagens/Nexolar/2.png",
+      "/imagens/Nexolar/3.png",
+      "/imagens/Nexolar/imoveis.png",
+      "/imagens/Nexolar/descricao-imovel.png",
+      "/imagens/Nexolar/descricao-imovel2.png",
+      "/imagens/Nexolar/avaliacao-do-bairro.png"
+    ]
+  },
+  {
+    slug: "nexolar-portal-imobiliario-com-ia",
+    title: "NexoLar – Portal Imobiliário com IA e Automação",
+    subtitle: "Sistema completo de captação, qualificação e conversão com chatbot inteligente e CRM integrado",
+    year: 2025,
+    role: "Arquiteto Full-Stack & Product Designer",
+    type: "SaaS",
+    stack: [
+      "Next.js 15",
+      "TypeScript",
+      "Tailwind CSS",
+      "Framer Motion",
+      "Supabase (PostgreSQL)",
+      "Row Level Security",
+      "Edge Functions",
+      "OpenAI GPT-4o",
+      "Zod",
+      "Server Actions",
+      "Vercel",
+      "Resend API",
+      "GitHub Copilot",
+      "Cursor AI"
+    ],
+    shortDescription:
+      "Plataforma imobiliária completa que automatiza captação e qualificação de leads 24/7 através de chatbot inteligente com GPT-4o, CRM administrativo integrado e automações baseadas em comportamento, reduzindo 80% do tempo de qualificação e aumentando conversão em 3x.",
+    longDescription:
+      "Desenvolvi uma plataforma full-stack moderna combinando portal público otimizado para SEO, chatbot conversacional com IA generativa, CRM administrativo completo e automações inteligentes. O sistema inclui autenticação multi-role com Row Level Security, processamento de conversas em tempo real com context window de 128k tokens, classificação automática de leads com score 0-100, dashboard analítico com KPIs, gestão completa de imóveis e leads, histórico de mensagens com sugestões contextuais da IA, e Edge Functions para follow-ups automáticos. A arquitetura multi-camadas com Server Components do Next.js 15 garante SSR otimizado, enquanto o Supabase Realtime fornece notificações instantâneas para corretores. Todo o design system foi baseado em tokens customizados com Tailwind CSS, incluindo microinterações suaves com Framer Motion.",
+    highlights: [
+      "Chatbot conversacional 24/7 com GPT-4o treinado para mercado imobiliário, compreendendo linguagem natural, qualificando leads com perguntas estratégicas, recomendando imóveis personalizados e transferindo para humano quando necessário",
+      "CRM administrativo completo com dashboard analítico (KPIs em tempo real), gestão de imóveis (CRUD + upload + preview), pipeline visual de leads (novo → qualificado → contato → visita → fechado), histórico de mensagens com IA sugerindo respostas e sistema de roles (admin/corretor) com RLS",
+      "Arquitetura multi-camadas escalável: Next.js 15 App Router com Server Components para SSR, Supabase PostgreSQL com RLS para segurança granular, Edge Functions (Deno) para automações assíncronas e Realtime subscriptions para notificações instantâneas",
+      "Automações inteligentes incluindo follow-ups automáticos para leads inativos, classificação com score 0-100 usando GPT-4o baseado em comportamento, notificações realtime via Supabase e webhooks para integração com WhatsApp Business API",
+      "Performance excepcional com Server Components, lazy loading, image optimization, filtros dinâmicos com debounce, caching inteligente de API e streaming do GPT-4o para UX fluida sem loading bloqueante",
+      "Resultados mensuráveis: atendimento 24/7 sem custo adicional, redução de 80% no tempo de qualificação, aumento de 3x na taxa de conversão, ROI positivo em 2 meses e experience score 9.2/10 em testes reais",
+      "Sistema preparado para evolução multi-tenant (transformação em SaaS), com base de dados valiosa para análise preditiva e diferencial competitivo como única imobiliária local com IA integrada end-to-end"
+    ],
+    responsibilities: [
+      "Definição da arquitetura multi-camadas (Next.js 15 + Supabase + OpenAI), modelagem do banco de dados normalizado com RLS, desenho de fluxos de automação e jornadas do usuário, e elaboração de documentação técnica completa",
+      "Desenvolvimento frontend com design system baseado em tokens Tailwind CSS, componentes reutilizáveis TypeScript, otimização de performance (SSR, lazy loading, image optimization) e implementação de filtros dinâmicos com debounce",
+      "Desenvolvimento backend incluindo schema PostgreSQL completo, configuração de RLS policies para segurança multi-role, criação de Server Actions para mutations e Edge Functions (Deno) para automações assíncronas",
+      "Integração completa de IA: chatbot streaming com GPT-4o, sistema de classificação automática de leads com score 0-100, criação de prompts contextuais para diferentes personas e otimização de custos de API (caching + context management)",
+      "Configuração de CI/CD com GitHub Actions + Vercel, setup de variáveis de ambiente e secrets, monitoramento de logs e performance (Vercel Analytics) e documentação de processos de deploy",
+      "Desenvolvimento de automações incluindo autoFollowup() para e-mails personalizados, classifyLead() com GPT-4o para scoring, notificações realtime para corretores e webhooks para integrações externas"
+    ],
+    status: "Em desenvolvimento",
+    images: [
+      "/imagens/Nexolar/hero.png",
+      "/imagens/Nexolar/1.png",
+      "/imagens/Nexolar/2.png",
+      "/imagens/Nexolar/3.png",
+      "/imagens/Nexolar/imoveis.png",
+      "/imagens/Nexolar/descricao-imovel.png",
+      "/imagens/Nexolar/descricao-imovel2.png",
+      "/imagens/Nexolar/avaliacao-do-bairro.png"
+    ]
   },
   {
     slug: "pulse-digital-presence-trafego-pago",
@@ -147,7 +220,14 @@ export const projects: Project[] = [
       "Implementação de tracking e analytics para medir taxa de conversão, tempo de permanência e pontos de abandono"
     ],
     status: "Em produção",
-    images: ["/projects/pulse-digital-presence-trafego-pago/01.svg"]
+    images: [
+      "/imagens/Pulse Trafego Pago/hero.png",
+      "/imagens/Pulse Trafego Pago/1.png",
+      "/imagens/Pulse Trafego Pago/2.png",
+      "/imagens/Pulse Trafego Pago/3.png",
+      "/imagens/Pulse Trafego Pago/4.png",
+      "/imagens/Pulse Trafego Pago/5.png"
+    ]
   },
   {
     slug: "pulse-digital-presence-clinicas",
@@ -175,7 +255,13 @@ export const projects: Project[] = [
       "Definição de KPIs e dashboards para monitoramento de performance do bot (taxa de resolução, tempo médio, satisfação)"
     ],
     status: "Em produção",
-    images: ["/projects/pulse-digital-presence-clinicas/01.svg"]
+    images: [
+      "/imagens/Pulse Clinicas/hero.png",
+      "/imagens/Pulse Clinicas/1.png",
+      "/imagens/Pulse Clinicas/2.png",
+      "/imagens/Pulse Clinicas/3.png",
+      "/imagens/Pulse Clinicas/bot.png"
+    ]
   },
   {
     slug: "feirao-do-ar-condicionado",
@@ -206,7 +292,17 @@ export const projects: Project[] = [
       demo: "https://www.feiraodoarcondicionado.com.br"
     },
     status: "Em produção",
-    images: ["/projects/feirao-do-ar-condicionado/01.svg"]
+    images: [
+      "/imagens/Feirao do ar condicionado/hero.png",
+      "/imagens/Feirao do ar condicionado/1.png",
+      "/imagens/Feirao do ar condicionado/2.png",
+      "/imagens/Feirao do ar condicionado/admin1.png",
+      "/imagens/Feirao do ar condicionado/admin2.png",
+      "/imagens/Feirao do ar condicionado/admin3.png",
+      "/imagens/Feirao do ar condicionado/admin4.png",
+      "/imagens/Feirao do ar condicionado/admin-config-produtos.png",
+      "/imagens/Feirao do ar condicionado/admin-config-produtos2.png"
+    ]
   },
   {
     slug: "doce-aroma-branding-e-site",
@@ -234,7 +330,16 @@ export const projects: Project[] = [
       "Integração com WhatsApp Business API para automação de pedidos, incluindo webhook architecture e formatação automática de mensagens estruturadas"
     ],
     status: "Em desenvolvimento",
-    images: ["/projects/doce-aroma-branding-e-site/01.svg"]
+    images: [
+      "/imagens/Doce Aroma/hero.png",
+      "/imagens/Doce Aroma/1.png",
+      "/imagens/Doce Aroma/2.png",
+      "/imagens/Doce Aroma/3.png",
+      "/imagens/Doce Aroma/4.png",
+      "/imagens/Doce Aroma/5.png",
+      "/imagens/Doce Aroma/6.png",
+      "/imagens/Doce Aroma/7.png"
+    ]
   },
   {
     slug: "miracle-bot-tibia-74",
@@ -276,7 +381,12 @@ export const projects: Project[] = [
       "Configuração de build system com PyInstaller (2 spec files customizados), scripts PowerShell para automação, empacotamento de assets e configurações, e sistema de single-instance com mutex Win32"
     ],
     status: "MVP",
-    images: ["/projects/miracle-bot-tibia-74/01.svg"]
+    images: [
+      "/imagens/bot/iniciarbot.png",
+      "/imagens/bot/1.png",
+      "/imagens/bot/2.png",
+      "/imagens/bot/3.png"
+    ]
   }
 ];
 
