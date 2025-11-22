@@ -12,7 +12,7 @@ import JsonLd from '@/components/seo/JsonLd'
 
 export default function Home() {
   const featuredSlugs = [
-    'eletrofix-hub-pro-fix-fogoes',
+    'fix-fogoes',
     'immoflow-saas-imobiliarias',
     'miracle-bot-tibia-74',
   ] as const
@@ -87,17 +87,29 @@ export default function Home() {
             >
               <div className="group relative h-full w-full">
                 <motion.div
-                  className="absolute left-6 right-0 top-8 h-40 rounded-2xl border border-foreground/10 glass shadow-soft will-change-transform"
+                  className="absolute left-6 right-0 top-8 h-40 rounded-2xl border border-foreground/10 glass shadow-soft will-change-transform overflow-hidden"
                   style={{ background: "radial-gradient(ellipse at top, rgba(255,255,255,0.06), transparent 60%)", transformStyle: 'preserve-3d' }}
                   whileHover={{ rotateX: -2, rotateY: 3 }}
                   transition={{ type: 'spring', stiffness: 120, damping: 14, mass: 0.6 }}
-                />
+                >
+                  <img 
+                    src="/imagens/ImmoFlow/dashboard.png" 
+                    alt="ImmoFlow Dashboard" 
+                    className="w-full h-full object-cover opacity-80"
+                  />
+                </motion.div>
                 <motion.div
-                  className="absolute left-0 right-10 top-0 h-40 rounded-2xl border border-foreground/10 glass shadow-soft will-change-transform"
+                  className="absolute left-0 right-10 top-0 h-40 rounded-2xl border border-foreground/10 glass shadow-soft will-change-transform overflow-hidden"
                   style={{ background: "radial-gradient(ellipse at bottom, rgba(255,255,255,0.06), transparent 60%)", transformStyle: 'preserve-3d' }}
                   whileHover={{ rotateX: 2, rotateY: -3 }}
                   transition={{ type: 'spring', stiffness: 120, damping: 14, mass: 0.6 }}
-                />
+                >
+                  <img 
+                    src="/imagens/FixFogoes/dashboard.png" 
+                    alt="Fix Fogões Dashboard" 
+                    className="w-full h-full object-cover opacity-80"
+                  />
+                </motion.div>
               </div>
             </motion.div>
           </div>

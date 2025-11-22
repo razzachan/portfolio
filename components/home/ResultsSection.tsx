@@ -12,7 +12,7 @@ type Item = {
 const items: Item[] = [
   {
     icon: <Wrench size={18} className="text-foreground/80" />,
-    title: "Fix Fogões — EletroFix Hub Pro",
+    title: "Fix Fogões",
     bullets: [
       "Atendimento via IA + WhatsApp",
       "Corte de erros humanos",

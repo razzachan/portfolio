@@ -24,7 +24,7 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    slug: "eletrofix-hub-pro-fix-fogoes",
+    slug: "fix-fogoes",
     title: "Fix Fogões – Sistema completo para assistência técnica",
     subtitle: "ERP + IA + WhatsApp para gestão de assistência técnica",
     year: 2024,
@@ -68,7 +68,9 @@ export const projects: Project[] = [
       "Configuração de deploy em Railway, Supabase e Vercel",
       "Implementação de testes automatizados para APIs e fluxos críticos"
     ],
-    links: {},
+    links: {
+      demo: "https://app.fixfogoes.com.br"
+    },
     status: "Em produção",
     images: [
       "/imagens/FixFogoes/dashboard.png",
@@ -180,6 +182,9 @@ export const projects: Project[] = [
       "Configuração de CI/CD com GitHub Actions + Vercel, setup de variáveis de ambiente e secrets, monitoramento de logs e performance (Vercel Analytics) e documentação de processos de deploy",
       "Desenvolvimento de automações incluindo autoFollowup() para e-mails personalizados, classifyLead() com GPT-4o para scoring, notificações realtime para corretores e webhooks para integrações externas"
     ],
+    links: {
+      demo: "https://nexolar.com.br"
+    },
     status: "Em desenvolvimento",
     images: [
       "/imagens/Nexolar/hero.png",
@@ -217,6 +222,9 @@ export const projects: Project[] = [
       "Desenvolvimento frontend com React + Next.js otimizado para SEO e performance, incluindo lazy loading e code splitting",
       "Implementação de tracking e analytics para medir taxa de conversão, tempo de permanência e pontos de abandono"
     ],
+    links: {
+      demo: "https://lp.pulsedigitalpresence.com"
+    },
     status: "Em produção",
     images: [
       "/imagens/PulseTrafegoPago/hero.png",
@@ -252,6 +260,9 @@ export const projects: Project[] = [
       "Implementação da arquitetura de webhooks e integrações com WhatsApp Business API e sistemas de CRM/agenda da clínica",
       "Definição de KPIs e dashboards para monitoramento de performance do bot (taxa de resolução, tempo médio, satisfação)"
     ],
+    links: {
+      demo: "https://lp.pulsedigitalpresence.com/clinics"
+    },
     status: "Em produção",
     images: [
       "/imagens/PulseClinicas/hero.png",
@@ -327,6 +338,9 @@ export const projects: Project[] = [
       "Desenvolvimento full-stack do cardápio digital usando Cursor AI e v0.dev para aceleração de código, incluindo componentes React, sistema de categorias e busca",
       "Integração com WhatsApp Business API para automação de pedidos, incluindo webhook architecture e formatação automática de mensagens estruturadas"
     ],
+    links: {
+      demo: "https://docearoma.shop"
+    },
     status: "Em desenvolvimento",
     images: [
       "/imagens/DoceAroma/hero.png",
