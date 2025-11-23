@@ -3,6 +3,9 @@ import Badge from "@/components/ui/Badge";
 import JsonLd from "@/components/seo/JsonLd";
 import SectionHeader from "@/components/ui/SectionHeader";
 
+export const dynamic = 'force-static';
+export const revalidate = 3600;
+
 export const metadata: Metadata = {
   title: "Sobre — Julio Betoni",
   description: "Full‑stack focado em SaaS, automações e IA aplicada com UX moderna e produto de verdade.",
