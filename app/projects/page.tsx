@@ -3,8 +3,7 @@ import ProjectsPageClient from "./ProjectsPageClient";
 import JsonLd from "@/components/seo/JsonLd";
 import { projects } from "@/src/lib/projects";
 
-export const dynamic = 'force-static';
-export const revalidate = 3600; // Revalidar a cada hora
+export const revalidate = 3600;
 
 export default function ProjectsPage() {
   const base = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'

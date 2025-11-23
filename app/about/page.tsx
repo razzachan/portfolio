@@ -3,7 +3,6 @@ import Badge from "@/components/ui/Badge";
 import JsonLd from "@/components/seo/JsonLd";
 import SectionHeader from "@/components/ui/SectionHeader";
 
-export const dynamic = 'force-static';
 export const revalidate = 3600;
 
 export const metadata: Metadata = {

@@ -4,7 +4,6 @@ import { Button } from '@/components/ui/Button'
 import SectionHeader from '@/components/ui/SectionHeader'
 import JsonLd from '@/components/seo/JsonLd'
 
-export const dynamic = 'force-static';
 export const revalidate = 3600;
 
 export const metadata: Metadata = {
