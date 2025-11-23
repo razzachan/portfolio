@@ -72,12 +72,12 @@ export default function FeaturedProjectCard({ project, bullets, priority }: Prop
         {thumb ? (
           <motion.div
             whileHover={{ scale: 1.02 }}
-            className="relative h-44 md:h-full min-h-40 w-full overflow-hidden rounded-xl border border-foreground/10 shadow-soft"
+            className="relative h-44 md:h-full min-h-40 w-full overflow-hidden rounded-xl border border-foreground/10 shadow-soft bg-foreground/5"
           >
             <img
               src={thumbSrc}
               alt={thumbAlt}
-              className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+              className="absolute inset-0 w-full h-full object-contain transition-transform duration-700 group-hover:scale-[1.03]"
               loading={priority ? 'eager' : 'lazy'}
               onError={(e) => {
                 e.currentTarget.style.display = 'none';
